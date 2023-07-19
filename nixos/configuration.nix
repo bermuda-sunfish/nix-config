@@ -62,7 +62,8 @@
 
   networking.hostName = "766f703131";
 
-  boot.loader.systemd-boot.enable = true;
+  #boot.loader.systemd-boot.enable = true;
+  boot.loader.grub.device = "/dev/disk/by-label/nixos";
 
   users.users = {
     rfilipenko = {
