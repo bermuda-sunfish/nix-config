@@ -64,7 +64,7 @@
       nixosConfigurations = {
 
         # VirtualBox NixOS VM (vop11)
-        766f703131 = nixpkgs.lib.nixosSystem {
+        "766f703131" = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main nixos configuration file <
