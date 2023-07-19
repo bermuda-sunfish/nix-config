@@ -44,7 +44,7 @@ If you already have nix 2.4+, git, and have already enabled `flakes` and
 nix develop
 ```
 
-`nixos-rebuild --flake .` To build system configurations
+`nixos-rebuild switch --flake .` To build system configurations
 
 `home-manager --flake .` To build user configurations
 
