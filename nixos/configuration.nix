@@ -72,7 +72,11 @@
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBtRgVQmd+b+5rHkQevXc1joS6V1KiwAsHoPgD8SzAaI rfilipenko@optimanalytics.com"
       ];
-      extraGroups = [ "wheel" "video" "audio" ];
+      extraGroups = [
+        "wheel"
+        "video"
+        "audio"
+      ];
     };
   };
 
