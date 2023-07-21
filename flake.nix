@@ -67,8 +67,7 @@
         "766f703131" = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-            # > Our main nixos configuration file <
-            ./nixos/configuration.nix
+            ./hosts/766f703131
           ];
         };
       };
@@ -81,8 +80,7 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            # > Our main home-manager configuration file <
-            ./home-manager/home.nix
+            ./home-manager/rfilipenko
           ];
         };
       };
