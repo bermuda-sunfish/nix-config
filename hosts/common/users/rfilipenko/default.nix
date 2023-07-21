@@ -20,5 +20,5 @@ in
     packages = [ pkgs.home-manager ];
   };
 
-  home-manager.users.rfilipenko = import ../../../../home-manager/rfilipenko/${config.networking.hostName}.nix;
+  #home-manager.users.rfilipenko = import ../../../../home-manager/rfilipenko/${config.networking.hostName}.nix;
 }
