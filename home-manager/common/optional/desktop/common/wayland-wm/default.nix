@@ -7,8 +7,6 @@
     ./swayidle.nix
     ./swaylock.nix
     ./waybar.nix
-    ./wofi.nix
-    ./zathura.nix
   ];
 
   home.packages = with pkgs; [
