@@ -7,6 +7,8 @@
 
     hardware.url = "github:nixos/nixos-hardware";
 
+    nix-colors.url = "github:misterio77/nix-colors";
+
     firefly = {
       url = "github:timhae/firefly";
       inputs.nixpkgs.follows = "nixpkgs";
