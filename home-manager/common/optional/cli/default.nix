@@ -6,7 +6,7 @@
     ./screen.nix
     #  ./shellcolor.nix
     ./ssh.nix
-    ./starship.nix
+    #./starship.nix
   ];
 
   home.packages = with pkgs; [
