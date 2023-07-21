@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
 
     ../common/base
+    ../common/users/rfilipenko
   ];
 
   networking.hostName = "766f703131";
