@@ -5,5 +5,5 @@
   ];
 
   colorscheme = inputs.nix-colors.colorschemes.atelier-sulphurpool;
-  wallpaper = outputs.wallpapers.aenami-northwind;
+  #wallpaper = outputs.wallpapers.aenami-northwind;
 }

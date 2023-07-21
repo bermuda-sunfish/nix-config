@@ -40,7 +40,8 @@ in
   };
 
   colorscheme = lib.mkDefault colorSchemes.dracula;
-  wallpaper =
+  /*
+    wallpaper =
     let
       largest = f: xs: builtins.head (builtins.sort (a: b: a > b) (map f xs));
       largestWidth = largest (x: x.width) config.monitors;
@@ -53,6 +54,7 @@ in
         height = largestHeight;
         logoScale = 4;
       });
+  */
 
   home.file.".colorscheme".text = config.colorscheme.slug;
 }
