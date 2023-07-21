@@ -7,6 +7,11 @@
 
     hardware.url = "github:nixos/nixos-hardware";
 
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     firefly = {
       url = "github:timhae/firefly";
       inputs.nixpkgs.follows = "nixpkgs";
