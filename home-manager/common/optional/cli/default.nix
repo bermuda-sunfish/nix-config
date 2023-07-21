@@ -4,7 +4,7 @@
     ./direnv.nix
     ./git.nix
     ./screen.nix
-    ./shellcolor.nix
+    #  ./shellcolor.nix
     ./ssh.nix
     ./starship.nix
   ];
