@@ -2,7 +2,8 @@
 let ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in
 {
-  users.mutableUsers = false;
+  #TODO: maybe enable this after persistence is configured
+  #users.mutableUsers = false;
   users.users.rfilipenko = {
     isNormalUser = true;
     extraGroups = [
@@ -20,5 +21,5 @@ in
     packages = [ pkgs.home-manager ];
   };
 
-  #home-manager.users.rfilipenko = import ../../../../home-manager/rfilipenko/${config.networking.hostName}.nix;
+  home-manager.users.rfilipenko = import ../../../../home-manager/rfilipenko/${config.networking.hostName}.nix;
 }

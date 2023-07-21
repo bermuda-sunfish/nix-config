@@ -6,7 +6,7 @@ in
 {
   imports = [
     inputs.nix-colors.homeManagerModule
-    ../features/cli
+    ../optional/cli
   ] ++ (builtins.attrValues outputs.homeManagerModules);
 
   nixpkgs = {

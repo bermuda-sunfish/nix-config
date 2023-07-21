@@ -1,7 +1,7 @@
 { inputs, outputs, ... }: {
   imports = [
-    ./common/base
-    ./common/optional/desktop/hyprland
+    ../common/base
+    ../common/optional/desktop/hyprland
   ];
 
   colorscheme = inputs.nix-colors.colorschemes.atelier-sulphurpool;

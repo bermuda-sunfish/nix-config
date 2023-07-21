@@ -5,6 +5,7 @@
     ./locale.nix
     ./nix.nix
     ./openssh.nix
+    ./sudo.nix
     ./systemd-initrd.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
