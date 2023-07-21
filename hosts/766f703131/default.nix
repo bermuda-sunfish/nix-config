@@ -12,17 +12,7 @@
   ];
 
   networking.hostName = "766f703131";
-
-  users.users = {
-    rfilipenko = {
-      initialPassword = "hello-world-1234!";
-      isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBtRgVQmd+b+5rHkQevXc1joS6V1KiwAsHoPgD8SzAaI rfilipenko@optimanalytics.com"
-      ];
-      extraGroups = [ "wheel" "video" "audio" ];
-    };
-  };
+  boot.loader.systemd-boot.enable = true;
 
   system.stateVersion = "23.05";
 }
