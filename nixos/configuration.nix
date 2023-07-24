@@ -92,8 +92,9 @@ in
       packages = [ pkgs.home-manager ];
     };
 
-    home-manager.users.rfilipenko = import ../home-manager/home.nix;
   };
+
+  home-manager.users.rfilipenko = import ../home-manager/home.nix;
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
