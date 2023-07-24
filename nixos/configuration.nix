@@ -76,9 +76,9 @@ in
       ];
       extraGroups = [
         "wheel"
-        "video"
-        "audio"
-      ] ++ ifTheyExist [
+#        "video"
+#        "audio"
+      ] ++ ifGroupExists [
         "network"
         "wireshark"
         "i2c"
@@ -91,7 +91,7 @@ in
       packages = [ pkgs.home-manager ];
     };
 
-    home-manager.users.rfilipenko = import ../home-manager/home.nix;
+#    home-manager.users.rfilipenko = import ../home-manager/home.nix;
   };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
