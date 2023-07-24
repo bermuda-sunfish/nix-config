@@ -7,6 +7,7 @@ in
 {
   # You can import other NixOS modules here
   imports = [
+    inputs.home-manager.nixosModules.home-manager
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
 
@@ -76,8 +77,8 @@ in
       ];
       extraGroups = [
         "wheel"
-#        "video"
-#        "audio"
+        "video"
+        "audio"
       ] ++ ifGroupExists [
         "network"
         "wireshark"
@@ -91,7 +92,7 @@ in
       packages = [ pkgs.home-manager ];
     };
 
-#    home-manager.users.rfilipenko = import ../home-manager/home.nix;
+    home-manager.users.rfilipenko = import ../home-manager/home.nix;
   };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
