@@ -1,7 +1,10 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ inputs, outputs, lib, config, pkgs, ... }:
+let ifGroupExists = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
+in
+{
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
@@ -67,17 +70,28 @@
 
   users.users = {
     rfilipenko = {
-      initialPassword = "hello-world-1234!";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBtRgVQmd+b+5rHkQevXc1joS6V1KiwAsHoPgD8SzAaI rfilipenko@optimanalytics.com"
+        (builtins.readFile ../home-manager/ssh.pub)
       ];
       extraGroups = [
         "wheel"
         "video"
         "audio"
+      ] ++ ifTheyExist [
+        "network"
+        "wireshark"
+        "i2c"
+        "docker"
+        "podman"
+        "git"
+        "libvirtd"
       ];
+
+      packages = [ pkgs.home-manager ];
     };
+
+    home-manager.users.rfilipenko = import ../home-manager/home.nix;
   };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
