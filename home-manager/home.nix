@@ -135,7 +135,7 @@
       commit.gpgsign = true;
       init.defaultBranch = "main";
       gpg.format = "openpgp";
-      user.signingkey = "21C63BA030B14CF9";
+      user.signingkey = "D84856BECBB9A8DD";
     };
   }; 
 
