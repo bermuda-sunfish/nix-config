@@ -1,7 +1,7 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 
-{ inputs, outputs, lib, config, pkgs, ... }:
+{ inputs, outputs, lib, config, pkgs, helix, ... }:
 let ifGroupExists = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in
 {
@@ -77,6 +77,7 @@ in
     vim
     wget
     curl
+    helix.packages."${pkgs.system}".helix
   ];
 
   users.users = {
@@ -117,6 +118,8 @@ in
       PasswordAuthentication = false;
     };
   };
+
+  services.vscode-server.enable = true;
 
   system.stateVersion = "23.05";
 }

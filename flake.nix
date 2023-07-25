@@ -36,6 +36,11 @@
       url = "github:nix-community/nixos-vscode-server";
       inputs.nixpkgs.follows = "nixpkgs";
     }; 
+
+    helix = {
+      url = "github:helix-editor/helix/23.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -74,6 +79,7 @@
 
         # VirtualBox NixOS VM (vop11)
         "766f703131" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main nixos configuration file <
