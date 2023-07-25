@@ -8,6 +8,7 @@ in
   # You can import other NixOS modules here
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
 
@@ -69,6 +70,15 @@ in
   boot.loader.systemd-boot.enable = true;
   #boot.loader.grub.device = "/dev/disk/by-label/nixos";
 
+
+  environment.systemPackages = with pkgs; [
+    # Flakes use Git to pull dependencies from data sources, so Git must be installed first
+    git
+    vim
+    wget
+    curl
+  ];
+
   users.users = {
     rfilipenko = {
       isNormalUser = true;
@@ -94,7 +104,7 @@ in
 
   };
 
-  home-manager.users.rfilipenko = import ../home-manager/home.nix;
+  #home-manager.users.rfilipenko = import ../home-manager/home.nix;
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
